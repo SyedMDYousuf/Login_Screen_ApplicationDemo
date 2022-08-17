@@ -18,10 +18,9 @@ class Register_Screen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_screen)
 
-        val signinbtn = findViewById<MaterialButton>(R.id.signupbtn)
-        signinbtn.setOnClickListener{
-            uiValidation()
-        }
+        initSignUp()
+
+
         redirectToLogin()
 
 
@@ -56,6 +55,13 @@ class Register_Screen : AppCompatActivity() {
         tvSignIn.setOnClickListener {
             val intent = Intent(this, SignIn_Screen::class.java)
             startActivity(intent)
+        }
+    }
+
+    fun initSignUp(){
+        val signinbtn = findViewById<MaterialButton>(R.id.signupbtn)
+        signinbtn.setOnClickListener{
+            uiValidation()
         }
     }
 
